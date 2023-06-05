@@ -2,6 +2,8 @@ package com.gekocaretaker.syncore.block;
 
 import com.gekocaretaker.syncore.block.entity.BlockEntityInit;
 import com.gekocaretaker.syncore.block.entity.RockTumblerBlockEntity;
+import com.gekocaretaker.syncore.stats.StatsInit;
+import com.gekocaretaker.syncore.stats.SyncoreStats;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -18,7 +20,6 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -94,7 +95,7 @@ public class RockTumblerBlock extends AbstractFurnaceBlock {
         BlockEntity blockEntity = p_48690_.getBlockEntity(p_48691_);
         if (blockEntity instanceof RockTumblerBlockEntity) {
             p_48692_.openMenu((MenuProvider) blockEntity);
-            //p_48692_.awardStat();
+            p_48692_.awardStat(SyncoreStats.InteractWithRockTumbler.getRegistryName());
         }
     }
 
